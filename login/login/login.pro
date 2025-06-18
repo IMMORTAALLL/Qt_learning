@@ -1,4 +1,4 @@
-QT       += core gui sql
+QT       += core gui sql network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,22 +16,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    contentwidget.cpp \
+    homepage.cpp \
     loginwindow.cpp \
     main.cpp \
     mainwindow.cpp \
     registerwindow.cpp \
+    sidebarwidget.cpp \
     userdatabase.cpp \
     widget.cpp
 
 HEADERS += \
+    contentwidget.h \
+    homepage.h \
     loginwindow.h \
     mainwindow.h \
     registerwindow.h \
+    sidebarwidget.h \
     userdatabase.h \
     widget.h
 
 FORMS += \
-    selectwindow.ui \
     widget.ui
 
 # Default rules for deployment.
