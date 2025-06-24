@@ -23,6 +23,7 @@ SOURCES += \
     mainwindow.cpp \
     registerwindow.cpp \
     sidebarwidget.cpp \
+    tripplanningpage.cpp \
     userdatabase.cpp \
     widget.cpp
 
@@ -33,6 +34,7 @@ HEADERS += \
     mainwindow.h \
     registerwindow.h \
     sidebarwidget.h \
+    tripplanningpage.h \
     userdatabase.h \
     widget.h
 

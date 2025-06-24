@@ -5,6 +5,7 @@ release/main.o
 release/mainwindow.o
 release/registerwindow.o
 release/sidebarwidget.o
+release/tripplanningpage.o
 release/userdatabase.o
 release/widget.o
 release/qrc_resources.o
@@ -14,4 +15,5 @@ release/moc_loginwindow.o
 release/moc_mainwindow.o
 release/moc_registerwindow.o
 release/moc_sidebarwidget.o
+release/moc_tripplanningpage.o
 release/moc_widget.o

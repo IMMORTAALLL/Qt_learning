@@ -1,6 +1,7 @@
 // mainwindow.cpp
 #include "mainwindow.h"
 #include "homepage.h"
+#include "tripplanningpage.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QWidget>
@@ -47,7 +48,8 @@ void MainWindow::setupContentPages()
 {
     // 添加各个内容页面
     contentStack->addWidget(new HomePage(this));        // 首页 - 索引0
-
+    contentStack->addWidget(new QWidget(this));
+    contentStack->addWidget(new TripPlanningPage(this));
     // 默认显示首页
     sidebarWidget->selectItem(0);
 }
@@ -56,6 +58,7 @@ void MainWindow::onSidebarItemSelected(int index)
 {
     // 根据选择的索引切换内容页面
     if (index >= 0 && index < contentStack->count()) {
+
         contentStack->setCurrentIndex(index);
     }
 }
