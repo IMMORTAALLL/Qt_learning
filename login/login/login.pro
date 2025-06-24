@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     contentwidget.cpp \
+    costcalculationpage.cpp \
     homepage.cpp \
     loginwindow.cpp \
     main.cpp \
@@ -29,6 +30,7 @@ SOURCES += \
 
 HEADERS += \
     contentwidget.h \
+    costcalculationpage.h \
     homepage.h \
     loginwindow.h \
     mainwindow.h \

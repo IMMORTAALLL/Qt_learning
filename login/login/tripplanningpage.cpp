@@ -2,10 +2,12 @@
 #include "tripplanningpage.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include "userdatabase.h"
 
-TripPlanningPage::TripPlanningPage(QWidget *parent) : ContentWidget("行程规划", parent)
+TripPlanningPage::TripPlanningPage(QWidget *parent) : ContentWidget("行程记录", parent)
 {
     setupUI();
+    loadTripPlans();
 }
 
 TripPlanningPage::~TripPlanningPage()
@@ -120,6 +122,9 @@ void TripPlanningPage::onAddRecordButtonClicked()
         QString record = QString("%1 - %2").arg(destination).arg(date.toString(Qt::ISODate));
         recordListWidget->addItem(record);
         destinationEdit->clear();
+
+        // 添加到数据库
+        UserDatabase::instance().addTripPlan(destination, date);
     }
 }
 
@@ -127,6 +132,24 @@ void TripPlanningPage::onDeleteRecordButtonClicked()
 {
     QList<QListWidgetItem*> selectedItems = recordListWidget->selectedItems();
     foreach (QListWidgetItem* item, selectedItems) {
+        QString record = item->text();
+        QStringList parts = record.split(" - ");
+        if (parts.size() == 2) {
+            QString destination = parts[0];
+            QDate date = QDate::fromString(parts[1], Qt::ISODate);
+
+            // 从数据库删除
+            UserDatabase::instance().deleteTripPlan(destination, date);
+        }
         delete recordListWidget->takeItem(recordListWidget->row(item));
+    }
+}
+
+void TripPlanningPage::loadTripPlans()
+{
+    QList<QPair<QString, QDate>> plans = UserDatabase::instance().getTripPlans();
+    foreach (const auto& plan, plans) {
+        QString record = QString("%1 - %2").arg(plan.first).arg(plan.second.toString(Qt::ISODate));
+        recordListWidget->addItem(record);
     }
 }

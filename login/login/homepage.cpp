@@ -117,7 +117,7 @@ void HomePage::setupQAAssistant()
 
     // 添加模板问题
     QStringList templateQuestions = {
-        "推荐一个适合夏季的旅游目的地",
+        "帮我规划一下去北京的行程",
         "日本东京有哪些必去的景点",
         "如何办理申根签证",
         "泰国自由行需要注意什么",
@@ -371,6 +371,17 @@ void HomePage::onApiResponse(QNetworkReply *reply)
     }
 
     reply->deleteLater();
+}
+
+
+void HomePage::updateTemplateQuestion(const QString& destination)
+{
+    if (templateQuestionsLayout->count() > 0) {
+        QPushButton *firstButton = qobject_cast<QPushButton*>(templateQuestionsLayout->itemAt(0)->widget());
+        if (firstButton) {
+            firstButton->setText("帮我规划一下去" + destination + "的行程");
+        }
+    }
 }
 
 void HomePage::onTextEditReturnPressed()

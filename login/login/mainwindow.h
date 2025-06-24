@@ -5,6 +5,7 @@
 #include <QMainWindow>
 #include <QStackedWidget>
 #include "sidebarwidget.h"
+#include "homepage.h"
 
 class MainWindow : public QMainWindow
 {
@@ -12,6 +13,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    HomePage* getHomePage() const;
 
 private slots:
     void onSidebarItemSelected(int index);

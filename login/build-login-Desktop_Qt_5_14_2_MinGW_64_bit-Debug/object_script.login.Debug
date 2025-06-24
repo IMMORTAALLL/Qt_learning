@@ -1,4 +1,5 @@
 debug/contentwidget.o
+debug/costcalculationpage.o
 debug/homepage.o
 debug/loginwindow.o
 debug/main.o
@@ -10,6 +11,7 @@ debug/userdatabase.o
 debug/widget.o
 debug/qrc_resources.o
 debug/moc_contentwidget.o
+debug/moc_costcalculationpage.o
 debug/moc_homepage.o
 debug/moc_loginwindow.o
 debug/moc_mainwindow.o

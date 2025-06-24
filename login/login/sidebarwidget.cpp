@@ -61,9 +61,11 @@ void SidebarWidget::setupUI()
 
     // 添加菜单项（保持原有图标不变）
     //listWidget->addItem(new QListWidgetItem(""));
-    listWidget->addItem(new QListWidgetItem(QIcon(":/icons/home.png"), "首页"));
+    listWidget->addItem(new QListWidgetItem(QIcon(":/icons/home.png"), "大模型"));
     listWidget->addItem(new QListWidgetItem(""));
-    listWidget->addItem(new QListWidgetItem(QIcon(":/icons/trip.png"), "行程规划"));
+    listWidget->addItem(new QListWidgetItem(QIcon(":/icons/trip.png"), "行程记录"));
+    listWidget->addItem(new QListWidgetItem(""));
+    listWidget->addItem(new QListWidgetItem(QIcon(":/icons/cost.png"), "行程计费"));
     listWidget->addItem(new QListWidgetItem(""));
     listWidget->addItem(new QListWidgetItem(QIcon(":/icons/profile.png"), "旅行绘卷"));
 

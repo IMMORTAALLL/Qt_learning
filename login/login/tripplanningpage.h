@@ -21,6 +21,7 @@ private slots:
 
 private:
     void setupUI();
+    void loadTripPlans();
 
     QLineEdit *destinationEdit;
     QDateEdit *dateEdit;

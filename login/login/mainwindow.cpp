@@ -2,6 +2,7 @@
 #include "mainwindow.h"
 #include "homepage.h"
 #include "tripplanningpage.h"
+#include "costcalculationpage.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QWidget>
@@ -47,9 +48,11 @@ void MainWindow::setupUI()
 void MainWindow::setupContentPages()
 {
     // 添加各个内容页面
-    contentStack->addWidget(new HomePage(this));        // 首页 - 索引0
+    contentStack->addWidget(new HomePage(this));
     contentStack->addWidget(new QWidget(this));
     contentStack->addWidget(new TripPlanningPage(this));
+    contentStack->addWidget(new QWidget(this));
+    contentStack->addWidget(new CostCalculationPage("行程计费", this));
     // 默认显示首页
     sidebarWidget->selectItem(0);
 }
@@ -61,4 +64,9 @@ void MainWindow::onSidebarItemSelected(int index)
 
         contentStack->setCurrentIndex(index);
     }
+}
+
+HomePage* MainWindow::getHomePage() const
+{
+    return qobject_cast<HomePage*>(contentStack->widget(0));
 }

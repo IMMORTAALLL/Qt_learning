@@ -20,6 +20,7 @@ class HomePage : public ContentWidget
 public:
     explicit HomePage(QWidget *parent = nullptr);
     ~HomePage();
+    void updateTemplateQuestion(const QString& destination);
 
 private slots:
     void onSendButtonClicked();

@@ -1,4 +1,7 @@
 #include "userdatabase.h"
+#include "mainwindow.h"
+#include <QDate>
+#include <QApplication>
 
 bool UserDatabase::initDatabase() {
     db = QSqlDatabase::addDatabase("QSQLITE");
@@ -10,11 +13,28 @@ bool UserDatabase::initDatabase() {
     }
 
     QSqlQuery query;
-    return query.exec(
+    // 创建用户表
+    query.exec(
         "CREATE TABLE IF NOT EXISTS users ("
         "id INTEGER PRIMARY KEY AUTOINCREMENT,"
         "username TEXT UNIQUE NOT NULL,"
         "password_hash TEXT NOT NULL)"
+    );
+
+    query.exec(
+            "CREATE TABLE IF NOT EXISTS trip_costs ("
+            "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+            "trip_name TEXT NOT NULL,"
+            "cost REAL NOT NULL"
+            "usage TEXT NOT NULL)"
+        );
+
+    // 创建旅行规划表
+    return query.exec(
+        "CREATE TABLE IF NOT EXISTS trip_plans ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "destination TEXT NOT NULL,"
+        "date TEXT NOT NULL)"
     );
 }
 
@@ -55,4 +75,48 @@ QString UserDatabase::hashPassword(const QString& password) {
         password.toUtf8(), QCryptographicHash::Sha256
     );
     return hashed.toHex();
+}
+
+// 新增函数实现
+bool UserDatabase::addTripPlan(const QString& destination, const QDate& date) {
+    QSqlQuery query;
+    query.prepare("INSERT INTO trip_plans (destination, date) VALUES (:destination, :date)");
+    query.bindValue(":destination", destination);
+    query.bindValue(":date", date.toString(Qt::ISODate));
+
+    if (query.exec()) {
+        // 获取MainWindow指针并更新首页模板问题
+        MainWindow* mainWindow = qobject_cast<MainWindow*>(qApp->activeWindow());
+        if (mainWindow) {
+            HomePage* homePage = mainWindow->getHomePage();
+            if (homePage) {
+                homePage->updateTemplateQuestion(destination);
+            }
+        }
+        return true;
+    }
+    return false;
+}
+
+
+bool UserDatabase::deleteTripPlan(const QString& destination, const QDate& date) {
+    QSqlQuery query;
+    query.prepare("DELETE FROM trip_plans WHERE destination = :destination AND date = :date");
+    query.bindValue(":destination", destination);
+    query.bindValue(":date", date.toString(Qt::ISODate));
+
+    return query.exec();
+}
+
+QList<QPair<QString, QDate>> UserDatabase::getTripPlans() {
+    QList<QPair<QString, QDate>> plans;
+    QSqlQuery query("SELECT destination, date FROM trip_plans");
+
+    while (query.next()) {
+        QString destination = query.value(0).toString();
+        QDate date = QDate::fromString(query.value(1).toString(), Qt::ISODate);
+        plans.append(qMakePair(destination, date));
+    }
+
+    return plans;
 }

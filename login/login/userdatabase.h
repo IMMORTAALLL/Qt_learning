@@ -6,6 +6,7 @@
 #include <QSqlError>
 #include <QCryptographicHash>
 #include <QDebug>
+#include <QDate>
 
 class UserDatabase {
 public:
@@ -17,6 +18,10 @@ public:
     bool initDatabase();
     bool registerUser(const QString& username, const QString& password);
     bool validateUser(const QString& username, const QString& password);
+
+    bool addTripPlan(const QString& destination, const QDate& date);
+    bool deleteTripPlan(const QString& destination, const QDate& date);
+    QList<QPair<QString, QDate>> getTripPlans();
 
 private:
     QSqlDatabase db;
