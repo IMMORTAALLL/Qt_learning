@@ -6,6 +6,7 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QTableWidget>
+#include <QDateEdit>
 
 class CostCalculationPage : public ContentWidget
 {
@@ -27,6 +28,7 @@ private:
     QLineEdit *usageEdit;
     QPushButton *recordButton;
     QTableWidget *costTable;
+    QDateEdit *costDateEdit;
 };
 
 #endif // COSTCALCULATIONPAGE_H

@@ -25,7 +25,8 @@ bool UserDatabase::initDatabase() {
             "CREATE TABLE IF NOT EXISTS trip_costs ("
             "id INTEGER PRIMARY KEY AUTOINCREMENT,"
             "trip_name TEXT NOT NULL,"
-            "cost REAL NOT NULL"
+            "cost REAL NOT NULL,"
+            "date TEXT NOT NULL,"
             "usage TEXT NOT NULL)"
         );
 

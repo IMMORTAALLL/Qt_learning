@@ -175,7 +175,7 @@ void LoginWindow::paintEvent(QPaintEvent* event)
         painter.drawPixmap(targetRect, background);
 
         // 如果需要半透明效果，可以添加一个半透明遮罩
-         painter.fillRect(rect(), QColor(255, 255, 255, 90));  // 30% 透明度的黑色遮罩
+         painter.fillRect(rect(), QColor(255, 255, 255, 150));  // 30% 透明度的黑色遮罩
 
         // 调用基类实现绘制子控件
         QWidget::paintEvent(event);
