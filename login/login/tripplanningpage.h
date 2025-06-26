@@ -7,6 +7,9 @@
 #include <QPushButton>
 #include <QListWidget>
 #include <QDateEdit>
+#include <QVBoxLayout>
+#include <QGroupBox>
+#include <QMap>
 
 class TripPlanningPage : public ContentWidget
 {
@@ -16,18 +19,32 @@ public:
     ~TripPlanningPage();
 
 private slots:
-    void onAddRecordButtonClicked();
-    void onDeleteRecordButtonClicked();
+    void onNewTripButtonClicked();
+    void onAddLocationButtonClicked();
+    void onSaveTripButtonClicked();
+    void onDeleteLocationButtonClicked();
+    //void onTripListChanged();
 
 private:
     void setupUI();
-    void loadTripPlans();
+    void loadTrips();
+    void updateTripDisplay(const QString &tripName);
+
+    QLineEdit *tripNameEdit;
+    QPushButton *newTripButton;
+    QPushButton *saveTripButton;
 
     QLineEdit *destinationEdit;
     QDateEdit *dateEdit;
-    QPushButton *addRecordButton;
-    QPushButton *deleteRecordButton;
-    QListWidget *recordListWidget;
+    QPushButton *addLocationButton;
+    QPushButton *deleteLocationButton;
+
+    QListWidget *tripListWidget;
+    QGroupBox *locationGroupBox;
+    QListWidget *locationListWidget;
+
+    QString currentTripName;
+    QMap<QString, QList<QPair<QString, QDate>>> tempTrips;
 };
 
 #endif // TRIPPLANNINGPAGE_H

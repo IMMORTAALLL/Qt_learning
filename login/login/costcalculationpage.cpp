@@ -123,7 +123,7 @@ void CostCalculationPage::setupUI()
     // 费用记录表格
     costTable = new QTableWidget(contentWidget);
     costTable->setColumnCount(4);
-    costTable->setHorizontalHeaderLabels({"行程名称", "费用", "用途", "消费时间"});
+    costTable->setHorizontalHeaderLabels({"行程地点", "费用", "用途", "消费时间"});
     costTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
     // 添加到布局
@@ -140,12 +140,16 @@ void CostCalculationPage::setupUI()
 
 void CostCalculationPage::loadTripPlans()
 {
-    QSqlQuery query;
+    QSqlQuery query, query1;
     query.prepare("SELECT destination FROM trip_plans");
     if (query.exec()) {
         while (query.next()) {
             QString tripName = query.value(0).toString();
-            tripComboBox->addItem(tripName);
+            query1.prepare("SELECT trip_total_name FROM trip_plans where destination is :name");
+            query1.bindValue(":name", tripName);
+            query1.exec();
+            query1.next();
+            tripComboBox->addItem(query1.value(0).toString() + tripName);
         }
     } else {
         qDebug() << "Failed to load trip plans:" << query.lastError().text();

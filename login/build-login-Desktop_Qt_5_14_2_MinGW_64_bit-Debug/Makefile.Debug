@@ -429,6 +429,10 @@ debug/moc_costcalculationpage.cpp: ../login/costcalculationpage.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qabstractitemview.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qitemselectionmodel.h \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/QDateEdit \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qdatetimeedit.h \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qdatetime.h \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qcalendar.h \
 		debug/moc_predefs.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/bin/moc.exe
 	D:\Qt\Qt5.14.2\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/LENOVO/Desktop/zhuanyeshixun/qt/login/build-login-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/mkspecs/win32-g++ -IC:/Users/LENOVO/Desktop/zhuanyeshixun/qt/login/login -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/include -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtGui -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtANGLE -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtSql -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtNetwork -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore -I. -ID:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -ID:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -ID:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -ID:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -ID:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include ..\login\costcalculationpage.h -o debug\moc_costcalculationpage.cpp
@@ -1321,6 +1325,9 @@ debug/moc_tripplanningpage.cpp: ../login/tripplanningpage.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qdatetimeedit.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qdatetime.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qcalendar.h \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGroupBox \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgroupbox.h \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QMap \
 		debug/moc_predefs.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/bin/moc.exe
 	D:\Qt\Qt5.14.2\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/LENOVO/Desktop/zhuanyeshixun/qt/login/build-login-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/mkspecs/win32-g++ -IC:/Users/LENOVO/Desktop/zhuanyeshixun/qt/login/login -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/include -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtGui -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtANGLE -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtSql -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtNetwork -ID:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore -I. -ID:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -ID:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -ID:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -ID:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -ID:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include ..\login\tripplanningpage.h -o debug\moc_tripplanningpage.cpp
@@ -1716,6 +1723,10 @@ debug/costcalculationpage.o: ../login/costcalculationpage.cpp ../login/costcalcu
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qabstractitemview.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qitemselectionmodel.h \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/QDateEdit \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qdatetimeedit.h \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qdatetime.h \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qcalendar.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtSql/QSqlQuery \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtSql/qsqlquery.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtSql/qtsqlglobal.h \
@@ -1734,8 +1745,7 @@ debug/costcalculationpage.o: ../login/costcalculationpage.cpp ../login/costcalcu
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QCryptographicHash \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qcryptographichash.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QDebug \
-		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QDate \
-		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qdatetime.h
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QDate
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\costcalculationpage.o ..\login\costcalculationpage.cpp
 
 debug/homepage.o: ../login/homepage.cpp ../login/homepage.h \
@@ -2481,6 +2491,9 @@ debug/mainwindow.o: ../login/mainwindow.cpp ../login/mainwindow.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/QDateEdit \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qdatetimeedit.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qcalendar.h \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGroupBox \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgroupbox.h \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QMap \
 		../login/costcalculationpage.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/QComboBox \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qcombobox.h \
@@ -2916,7 +2929,9 @@ debug/tripplanningpage.o: ../login/tripplanningpage.cpp ../login/tripplanningpag
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qdatetimeedit.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qdatetime.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qcalendar.h \
-		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/QHBoxLayout \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGroupBox \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgroupbox.h \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QMap \
 		../login/userdatabase.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtSql/QSqlDatabase \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtSql/qsqldatabase.h \
@@ -2929,7 +2944,10 @@ debug/tripplanningpage.o: ../login/tripplanningpage.cpp ../login/tripplanningpag
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QCryptographicHash \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qcryptographichash.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QDebug \
-		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QDate
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QDate \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/QMessageBox \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qmessagebox.h \
+		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\tripplanningpage.o ..\login\tripplanningpage.cpp
 
 debug/userdatabase.o: ../login/userdatabase.cpp ../login/userdatabase.h \
@@ -3245,15 +3263,7 @@ debug/widget.o: ../login/widget.cpp ../login/widget.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qfiledevice.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtGui/qvector2d.h \
 		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
-		ui_widget.h \
-		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QVariant \
-		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/QApplication \
-		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qapplication.h \
-		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qcoreapplication.h \
-		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qeventloop.h \
-		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
-		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtGui/qguiapplication.h \
-		D:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtGui/qinputmethod.h
+		ui_widget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\widget.o ..\login\widget.cpp
 
 debug/qrc_resources.o: debug/qrc_resources.cpp 

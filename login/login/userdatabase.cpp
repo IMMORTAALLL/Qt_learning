@@ -30,10 +30,12 @@ bool UserDatabase::initDatabase() {
             "usage TEXT NOT NULL)"
         );
 
+    query.exec("CREATE INDEX IF NOT EXISTS idx_trip_name ON trip_plans(trip_total_name)");
     // 创建旅行规划表
     return query.exec(
         "CREATE TABLE IF NOT EXISTS trip_plans ("
         "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "trip_total_name TEXT NOT NULL,"
         "destination TEXT NOT NULL,"
         "date TEXT NOT NULL)"
     );
@@ -120,4 +122,52 @@ QList<QPair<QString, QDate>> UserDatabase::getTripPlans() {
     }
 
     return plans;
+}
+
+
+// 添加批量插入地点的方法
+bool UserDatabase::addTripLocations(const QString &tripName, const QList<QPair<QString, QDate>> &locations) {
+    QSqlQuery query;
+    query.prepare("INSERT INTO trip_plans (trip_total_name, destination, date) VALUES (:trip_name, :destination, :date)");
+
+    db.transaction();
+    foreach (const auto &location, locations) {
+        query.bindValue(":trip_name", tripName);
+        query.bindValue(":destination", location.first);
+        query.bindValue(":date", location.second.toString(Qt::ISODate));
+        if (!query.exec()) {
+            db.rollback();
+            return false;
+        }
+    }
+    db.commit();
+    return true;
+}
+
+// 按旅程名称获取所有地点
+QList<TripLocation> UserDatabase::getTripLocations(const QString &tripName) {
+    QList<TripLocation> locations;
+    QSqlQuery query;
+    query.prepare("SELECT destination, date FROM trip_plans WHERE trip_total_name = :trip_name ORDER BY date");
+    query.bindValue(":trip_name", tripName);
+
+    if (query.exec()) {
+        while (query.next()) {
+            locations.append({
+                query.value(0).toString(),
+                QDate::fromString(query.value(1).toString(), Qt::ISODate)
+            });
+        }
+    }
+    return locations;
+}
+
+// 删除单个地点
+bool UserDatabase::deleteLocation(const QString &tripName, const QString &destination, const QDate &date) {
+    QSqlQuery query;
+    query.prepare("DELETE FROM trip_plans WHERE trip_total_name = :trip_name AND destination = :destination AND date = :date");
+    query.bindValue(":trip_name", tripName);
+    query.bindValue(":destination", destination);
+    query.bindValue(":date", date.toString(Qt::ISODate));
+    return query.exec();
 }
