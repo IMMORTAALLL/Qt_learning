@@ -4,6 +4,7 @@ debug/homepage.o
 debug/loginwindow.o
 debug/main.o
 debug/mainwindow.o
+debug/ragquestionpage.o
 debug/registerwindow.o
 debug/sidebarwidget.o
 debug/tripplanningpage.o
@@ -15,6 +16,7 @@ debug/moc_costcalculationpage.o
 debug/moc_homepage.o
 debug/moc_loginwindow.o
 debug/moc_mainwindow.o
+debug/moc_ragquestionpage.o
 debug/moc_registerwindow.o
 debug/moc_sidebarwidget.o
 debug/moc_tripplanningpage.o

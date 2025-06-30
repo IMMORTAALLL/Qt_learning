@@ -4,6 +4,7 @@ release/homepage.o
 release/loginwindow.o
 release/main.o
 release/mainwindow.o
+release/ragquestionpage.o
 release/registerwindow.o
 release/sidebarwidget.o
 release/tripplanningpage.o
@@ -15,6 +16,7 @@ release/moc_costcalculationpage.o
 release/moc_homepage.o
 release/moc_loginwindow.o
 release/moc_mainwindow.o
+release/moc_ragquestionpage.o
 release/moc_registerwindow.o
 release/moc_sidebarwidget.o
 release/moc_tripplanningpage.o

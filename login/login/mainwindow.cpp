@@ -3,6 +3,7 @@
 #include "homepage.h"
 #include "tripplanningpage.h"
 #include "costcalculationpage.h"
+#include "ragquestionpage.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QWidget>
@@ -53,6 +54,8 @@ void MainWindow::setupContentPages()
     contentStack->addWidget(new TripPlanningPage(this));
     contentStack->addWidget(new QWidget(this));
     contentStack->addWidget(new CostCalculationPage("行程计费", this));
+    contentStack->addWidget(new QWidget(this));
+    contentStack->addWidget(new RagQuestionPage("专属RAG助手", this));
     // 默认显示首页
     sidebarWidget->selectItem(0);
 }

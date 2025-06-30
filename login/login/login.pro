@@ -22,6 +22,7 @@ SOURCES += \
     loginwindow.cpp \
     main.cpp \
     mainwindow.cpp \
+    ragquestionpage.cpp \
     registerwindow.cpp \
     sidebarwidget.cpp \
     tripplanningpage.cpp \
@@ -34,6 +35,7 @@ HEADERS += \
     homepage.h \
     loginwindow.h \
     mainwindow.h \
+    ragquestionpage.h \
     registerwindow.h \
     sidebarwidget.h \
     tripplanningpage.h \
