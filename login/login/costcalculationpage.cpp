@@ -5,6 +5,7 @@
 #include <QHBoxLayout>
 #include <QMessageBox>
 #include <QHeaderView>
+#include <fstream>
 #include "userdatabase.h"
 
 CostCalculationPage::CostCalculationPage(const QString &title, QWidget *parent) : ContentWidget(title, parent)
@@ -149,7 +150,7 @@ void CostCalculationPage::loadTripPlans()
             query1.bindValue(":name", tripName);
             query1.exec();
             query1.next();
-            tripComboBox->addItem(query1.value(0).toString() + tripName);
+            tripComboBox->addItem(query1.value(0).toString() + "-" + tripName);
         }
     } else {
         qDebug() << "Failed to load trip plans:" << query.lastError().text();
@@ -211,4 +212,14 @@ void CostCalculationPage::onRecordButtonClicked()
         qDebug() << "Failed to record cost:" << insertQuery.lastError().text();
         QMessageBox::warning(this, "记录失败", "费用记录添加失败，请稍后重试");
     }
+
+    std::ofstream ofile;
+    ofile.open("C:\\Users\\LENOVO\\Desktop\\zhuanyeshixun\\qt\\login\\pybackend\\simpleRAG\\data\\test.txt",
+               std::ios::out|std::ios::app);
+    QString temp = "===== 消费记录 =====\n行程名称:" + selectedTrip  + " 消费金额:" + costStr + " 消费用途:" + usage + " 消费时间:" + date + "\n=============\n";
+    ofile.write(temp.toUtf8().data(), temp.toUtf8().size());
+    ofile.flush();
+    ofile.close();
+    costEdit->clear();
+    usageEdit->clear();
 }

@@ -2,6 +2,7 @@
 #include "tripplanningpage.h"
 #include "userdatabase.h"
 #include <QMessageBox>
+#include <fstream>
 
 TripPlanningPage::TripPlanningPage(QWidget *parent) : ContentWidget("行程记录", parent)
 {
@@ -231,6 +232,41 @@ void TripPlanningPage::onSaveTripButtonClicked()
     } else {
         QMessageBox::warning(this, "失败", "保存旅程时出错");
     }
+
+    std::ofstream ofile;
+        ofile.open("C:\\Users\\LENOVO\\Desktop\\zhuanyeshixun\\qt\\login\\pybackend\\simpleRAG\\data\\test.txt",
+                   std::ios::out | std::ios::app);
+
+        if (ofile.is_open()) {
+            // 构建行程记录字符串
+            QString temp = "===== 行程记录 =====\n";
+            temp += "保存时间: " + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss") + "\n";
+            temp += "旅程名称: " + currentTripName + "\n";
+            temp += "地点列表:\n";
+
+            // 添加当前旅程的所有地点
+            if (tempTrips.contains(currentTripName)) {
+                foreach (const auto &location, tempTrips[currentTripName]) {
+                    temp += "  - " + location.first + " (" + location.second.toString("yyyy/MM/dd") + ")\n";
+                }
+            } else {
+                // 从数据库加载已保存的地点
+                QList<TripLocation> locations = UserDatabase::instance().getTripLocations(currentTripName);
+                foreach (const auto &location, locations) {
+                    temp += "  - " + location.destination + " (" + location.date.toString("yyyy/MM/dd") + ")\n";
+                }
+            }
+
+            temp += "====================\n\n";
+
+            // 写入文件
+            ofile.write(temp.toUtf8().data(), temp.toUtf8().size());
+            ofile.flush();
+        } else {
+            qDebug() << "无法打开文件进行写入";
+        }
+
+        ofile.close();
 }
 
 void TripPlanningPage::onDeleteLocationButtonClicked()
